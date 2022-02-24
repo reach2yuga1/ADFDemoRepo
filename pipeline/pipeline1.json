@@ -23,8 +23,7 @@
 					"sink": {
 						"type": "AzureSqlSink",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
-						"disableMetricsCollection": false
+						"sqlWriterUseTableLock": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -64,13 +63,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_salessource",
+						"referenceName": "ds_source",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_salessink",
+						"referenceName": "ds_destination",
 						"type": "DatasetReference"
 					}
 				]

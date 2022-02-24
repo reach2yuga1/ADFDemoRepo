@@ -1,0 +1,9 @@
+{
+	"name": "training1-adf",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b63d8041-2649-4f7b-95a3-93fde2452347",
+		"tenantId": "af89c948-0298-4b29-9030-b1a5750cc0c7"
+	}
+}

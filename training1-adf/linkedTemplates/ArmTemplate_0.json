@@ -64,12 +64,12 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_salessink')]",
+			"name": "[concat(parameters('factoryName'), '/ds_destination')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase2",
+					"referenceName": "AzureSqlDatabase1",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -91,16 +91,16 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_salessource')]",
+			"name": "[concat(parameters('factoryName'), '/ds_source')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase2",
+					"referenceName": "AzureSqlDatabase1",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -122,7 +122,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase2')]"
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"
 			]
 		},
 		{
@@ -157,6 +157,32 @@
 							"enableStaging": false,
 							"translator": {
 								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "id",
+											"type": "Int32",
+											"physicalType": "int"
+										},
+										"sink": {
+											"name": "id",
+											"type": "Int32",
+											"physicalType": "int"
+										}
+									},
+									{
+										"source": {
+											"name": "name",
+											"type": "String",
+											"physicalType": "varchar"
+										},
+										"sink": {
+											"name": "name",
+											"type": "String",
+											"physicalType": "varchar"
+										}
+									}
+								],
 								"typeConversion": true,
 								"typeConversionSettings": {
 									"allowDataTruncation": true,
@@ -166,14 +192,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "ds_salessource",
+								"referenceName": "ds_source",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "ds_salessink",
+								"referenceName": "ds_destination",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -188,8 +214,8 @@
 				"lastPublishTime": "2022-02-23T15:12:27Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ds_salessource')]",
-				"[concat(variables('factoryId'), '/datasets/ds_salessink')]"
+				"[concat(variables('factoryId'), '/datasets/ds_source')]",
+				"[concat(variables('factoryId'), '/datasets/ds_destination')]"
 			]
 		}
 	]

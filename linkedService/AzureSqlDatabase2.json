@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=sql-server90.database.windows.net;initial catalog=Sales;user id=localhost",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDk5NTYyMDQ5LTg2QzYtNEYwMC04NDEwLUEzREM3RjNFNTk5Q185OGU3NTA2Zi1hNmViLTQyOWQtOWE1Yi05YWU1ZWE1ODJmOWIiDQp9"
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=suraj12.database.windows.net;initial catalog=Test;user id=suraj",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDk5NTYyMDQ5LTg2QzYtNEYwMC04NDEwLUEzREM3RjNFNTk5Q182NmEwY2I2NC01NzQ3LTRkYjYtODQ3NS0wNDVkOGFkMzg0OWMiDQp9"
 		}
 	}
 }
